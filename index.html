@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Ball Animation</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    <style>
+        body {
+                background-color: SeaShell;
+        }
+    
+        .border {
+                border: 3px solid rgb(34, 139, 34);
+                height: 695px;
+                width: 1515px;
+               
+        }
+    
+        img {
+                position: relative;
+                width: 130px;
+                height: 130px;
+                animation: moving 8s linear infinite;
+                animation-play-state: paused;
+
+        }
+
+	.start {
+                border-radius: 10px;
+		font-size: 18px;
+                font-family:serif Georgia;
+                border: 2px solid;
+                color: black;
+                display: inline-block;
+                margin-top: 150px;
+                margin-left: 48px;
+                cursor: pointer;
+                font-weight: bold;
+            
+        }
+    
+       .stop {
+                border-radius: 10px;
+                font-size: 18px;
+                font-family:serif Georgia;
+                color: black;
+                display: inline-block;
+		margin-top: 30px;
+                margin-left: 48px;
+		cursor: pointer;
+                font-weight: bold;
+        }
+	
+	.start:hover {
+                background-color: rgb(0,100,0);
+                border: 1px solid green;
+                color: white;
+                font-weight: 900;
+                
+        }
+	
+        .stop:hover {
+                background-color: maroon;
+                color: white;
+                border: 1px solid maroon;
+                font-weight: 900;
+               
+        }
+
+        @keyframes moving {
+                from {
+                    transform: rotate(0deg);
+                }
+    
+                to {
+                    transform: rotate(1000deg);
+                }
+    
+            0% {
+                top: 0;
+                left: 0;
+            }
+    
+            25% {
+                top: 0;
+                left: 1368px;
+            }
+    
+            50% {
+                top: 550px;
+                left: 1368px;
+            }
+            75% {
+                top: 550px;
+                left: 0px;
+            }
+    
+            100% {
+                top: 0;
+                left: 0;
+            }
+        }
+	</style>
+	<body>
+		<div class = "border">
+			<div>  
+				<img src = "football.png" alt ="football" id ="ball">
+			</div>
+
+		<div>
+			<center><button class = "start" onclick = "start()" id = "startB">Start Moving</button></center>
+			<center><button class = "stop" onclick = "stop()" id = "stopB">Stop Moving</button></center>
+    		</div>
+
+    	<script>
+        	 function start() {
+            document.getElementById("ball").style.animationPlayState = "running";
+        }
+
+       		 function stop() {
+            document.getElementById("ball").style.animationPlayState = "paused";
+        }
+      </script>
+</body>
+</html>
